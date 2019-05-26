@@ -9,6 +9,43 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description>A Spring Boot library to use as a dependency and generate tracing information available as a response header.</description>
+  <url>https://github.com/sercasti/spring-httpserver-timings</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Sergio Castineyras</name>
+      <email>sercasti@gmail.com</email>
+      <organization>Personal</organization>
+      <organizationUrl>https://github.com/sercasti</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/sercasti/spring-httpserver-timings.git</connection>
+    <developerConnection>scm:git:ssh://github.com:sercasti/spring-httpserver-timings.git</developerConnection>
+    <url>http://github.com/sercasti/spring-httpserver-timings/tree/master</url>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>spring-httpserver-timings</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>spring-httpserver-timings</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
