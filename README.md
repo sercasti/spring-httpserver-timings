@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sercasti/spring-httpserver-timings.svg?branch=master)](https://travis-ci.org/sercasti/spring-httpserver-timings)
+
 # HTTP Server Timings library for Spring Boot projects
 
 This library is based on the HTTP Server Timings spec, which you can find here: https://www.w3.org/TR/server-timing/. The main idea is to be able to determine if any slow downs, bottlenecks or unexpected application issues happened for a request just by looking at the Network Tab on the browser, without the need to look at console logs or installing any tools.
