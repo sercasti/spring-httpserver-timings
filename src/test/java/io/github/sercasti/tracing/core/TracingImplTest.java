@@ -1,4 +1,4 @@
-package com.sercasti.tracing.core;
+package io.github.sercasti.tracing.core;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.junit.Test;
 
-import com.sercasti.tracing.core.Metric;
-import com.sercasti.tracing.core.TracingImpl;
+import io.github.sercasti.tracing.core.Metric;
+import io.github.sercasti.tracing.core.TracingImpl;
 
 /**
  * Unit tests for {@link TracingImpl}.

@@ -1,4 +1,4 @@
-package com.sercasti.tracing.filter;
+package io.github.sercasti.tracing.filter;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletResponse;
+
+import io.github.sercasti.tracing.filter.TracingFilter;
 
 /**
  * Unit tests for {@link TracingFilter}.

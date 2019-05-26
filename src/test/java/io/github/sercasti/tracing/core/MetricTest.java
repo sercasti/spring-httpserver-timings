@@ -1,4 +1,4 @@
-package com.sercasti.tracing.core;
+package io.github.sercasti.tracing.core;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import com.sercasti.tracing.core.Metric;
+import io.github.sercasti.tracing.core.Metric;
 
 /**
  * Unit tests for {@link Metric}.

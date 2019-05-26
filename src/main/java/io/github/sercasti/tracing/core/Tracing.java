@@ -1,4 +1,4 @@
-package com.sercasti.tracing.core;
+package io.github.sercasti.tracing.core;
 
 /**
  * Service to add metrics of the server to a http response.

@@ -1,4 +1,4 @@
-package com.sercasti.tracing.filter;
+package io.github.sercasti.tracing.filter;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -12,10 +12,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.sercasti.tracing.core.Metric;
-import com.sercasti.tracing.core.Tracing;
-import com.sercasti.tracing.core.TracingImpl;
-import com.sercasti.tracing.domain.HttpServletResponseCopier;
+import io.github.sercasti.tracing.core.Metric;
+import io.github.sercasti.tracing.core.Tracing;
+import io.github.sercasti.tracing.core.TracingImpl;
+import io.github.sercasti.tracing.domain.HttpServletResponseCopier;
 
 @Component
 @Order(1)

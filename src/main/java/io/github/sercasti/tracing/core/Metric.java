@@ -1,4 +1,4 @@
-package com.sercasti.tracing.core;
+package io.github.sercasti.tracing.core;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;

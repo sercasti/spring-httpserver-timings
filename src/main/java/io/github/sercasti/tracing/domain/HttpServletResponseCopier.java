@@ -1,4 +1,4 @@
-package com.sercasti.tracing.domain;
+package io.github.sercasti.tracing.domain;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

@@ -1,4 +1,4 @@
-package com.sercasti.tracing.interceptor;
+package io.github.sercasti.tracing.interceptor;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -6,8 +6,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sercasti.tracing.core.Metric;
-import com.sercasti.tracing.core.Tracing;
+import io.github.sercasti.tracing.core.Metric;
+import io.github.sercasti.tracing.core.Tracing;
 
 @Aspect
 @Component
