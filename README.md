@@ -13,12 +13,37 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
   - Use as annotation to trace a method, or inject the Tracing interface to trace a block of code
 
 # Instructions
-  - Add the dependency using maven/gradle
-  - Use the @Traceable annotation or autowire/inject the Tracing interface
+  - add the dependency from maven central:
+```
+        <dependency>
+            <groupId>io.github.sercasti</groupId>
+            <artifactId>spring-httpserver-timings</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+```
+  
+  - add these Beans to your spring config:
+```
+    @Bean
+    protected Tracing tracing() {
+        return TracingConfig.createTracing();
+    }
+
+    @Bean
+    protected TracingFilter tracingFilter() {
+        return new TracingFilter();
+    }
+    
+    @Bean
+    protected TracingInterceptor tracingInterceptor() {
+        return new TracingInterceptor(tracing());
+    }
+```
 
 # Example
   - You can find a sample app using this library here: https://github.com/sercasti/spring-servertimings-example
   ![](https://github.com/sercasti/spring-servertimings-example/raw/master/images/Example.png)
+  
 ### TODO's
  - Add kill switch from application properties
  - Chain Header from ServletRequest to support chaining (microservices)
