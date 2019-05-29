@@ -16,8 +16,10 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
   - Add the dependency using maven/gradle
   - Use the @Traceable annotation or autowire/inject the Tracing interface
 
+# Example
+  - You can find a sample app using this library here: https://github.com/sercasti/spring-servertimings-example
+  
 ### TODO's
- - Create Sample app using library
  - Add kill switch from application properties
  - Chain Header from ServletRequest to support chaining (microservices)
 
