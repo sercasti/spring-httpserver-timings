@@ -20,7 +20,7 @@ public class TracingInterceptor {
         this.tracing = tracing;
     }
 
-    @Around("@annotation(com.urbit.tracing.Traceable)")
+    @Around("@annotation(io.github.sercasti.tracing.Traceable)")
     public Object trace(final ProceedingJoinPoint joinPoint) throws Throwable {
         final Metric metric = tracing.start(joinPoint.getSignature().getName());
         try {
