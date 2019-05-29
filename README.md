@@ -39,6 +39,9 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
         return new TracingInterceptor(tracing());
     }
 ```
+# Usage
+  - Use the @Traceable annotation around a method to generate a metric with the name of the method.
+  - or autowire/inject the Tracing interface and use it on a specific block of code
 
 # Example
   - You can find a sample app using this library here: https://github.com/sercasti/spring-servertimings-example
