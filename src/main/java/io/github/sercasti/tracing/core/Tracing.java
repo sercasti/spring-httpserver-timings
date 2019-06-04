@@ -5,6 +5,8 @@ package io.github.sercasti.tracing.core;
  */
 public interface Tracing {
 
+    static final String SERVER_TIMING_HEADER = "Server-Timing";
+
     /**
      * Create a new metric with the current time as start time and the given name.
      * 

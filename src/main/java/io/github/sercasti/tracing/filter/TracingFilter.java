@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -23,9 +24,17 @@ public class TracingFilter extends OncePerRequestFilter {
 
     static final ThreadLocal<TracingImpl> tracingLocal = new ThreadLocal<>();
 
+    @Value("${tracing.disabled}")
+    private final boolean disabled = false;
+
     @Override
     protected void doFilterInternal(final HttpServletRequest request, final HttpServletResponse response, final FilterChain filterChain)
             throws ServletException, IOException {
+        if(disabled) {
+            filterChain.doFilter(request, response);
+        }
+
+        final String chainingHeaders = request.getHeader(Tracing.SERVER_TIMING_HEADER);
         final HttpServletResponseCopier responseWrapper = new HttpServletResponseCopier(response);
         final TracingImpl tracing = new TracingImpl();
         tracingLocal.set(tracing);
@@ -35,7 +44,7 @@ public class TracingFilter extends OncePerRequestFilter {
             totalMetric.stop();
         } finally {
             responseWrapper.flushBuffer();
-            tracing.dump(response);
+            tracing.dump(response, chainingHeaders);
             tracingLocal.set(null);
             responseWrapper.reallyFlush();
         }
