@@ -4,15 +4,16 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.servlet.http.HttpServletResponse;
 
 public class TracingImpl implements Tracing {
 
-    static final String SERVER_TIMING_HEADER = "Server-Timing";
     private static final String SERVER_TIMING_HEADER_DUR = "dur=";
     private static final String SERVER_TIMING_HEADER_DESC = "desc=";
-    List<Metric> metrics = new ArrayList<>();
+    final List<Metric> metrics = new ArrayList<>();
 
     public Metric start(final String name, final String description) {
         final Metric metric = new Metric(name, description);
@@ -20,11 +21,11 @@ public class TracingImpl implements Tracing {
         return metric;
     }
 
-    public void dump(final HttpServletResponse response) {
-        final String headerName = SERVER_TIMING_HEADER;
+    public void dump(final HttpServletResponse response, final String chainingHeaders) {
         final String content = metrics.stream().map(m -> convert(m)).reduce("",(metrica, metricb) -> metrica + "," + metricb);
-        if (content.length() > 0) {
-            response.addHeader(headerName, content.substring(1));
+        final String union = Stream.of(chainingHeaders, content.substring(1)).filter(s -> s != null && !s.isEmpty()).collect(Collectors.joining(" "));
+        if (union.length() > 0) {
+            response.addHeader(SERVER_TIMING_HEADER, union);
         }
         metrics.clear();
     }

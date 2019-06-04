@@ -45,7 +45,7 @@ public class TracingImplTest {
         metric.stop();
         final Metric metric2 = tracing.start("db", "db query");
         metric2.stop();
-        tracing.dump(response);
+        tracing.dump(response, "");
         verify(response, atLeastOnce()).addHeader(anyString(), anyString());
         assertTrue(tracing.metrics.isEmpty());
     }

@@ -47,14 +47,8 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
   - You can find a sample app using this library here: https://github.com/sercasti/spring-servertimings-example
   ![](https://github.com/sercasti/spring-servertimings-example/raw/master/images/Example.png)
   
-### TODO's
- - Add kill switch from application properties
- - Chain Header from ServletRequest to support chaining (microservices)
-
-License
-----
-
-MIT
+# License
+  MIT
 
 
 **Free Software, Hell Yeah!**
