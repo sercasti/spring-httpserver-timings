@@ -57,6 +57,7 @@ public class HttpServletResponseCopier extends HttpServletResponseWrapper {
 
     @Override
     public boolean isCommitted() {
+        if(copier == null) return false;
         return copier.isCommitted();
     }
 
