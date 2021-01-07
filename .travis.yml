@@ -1,6 +1,6 @@
 language: java
 jdk:
- - oraclejdk8
+ - openjdk8
 
 ## export GPG details
 before_install:
