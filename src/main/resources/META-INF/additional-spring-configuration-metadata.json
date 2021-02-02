@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "tracing.disabled",
+      "defaultValue": false
+    }
+  ]
+}
