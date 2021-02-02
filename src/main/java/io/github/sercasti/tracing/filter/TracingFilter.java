@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -20,12 +21,20 @@ import io.github.sercasti.tracing.domain.HttpServletResponseCopier;
 
 @Component
 @Order(1)
+@ConfigurationProperties(prefix = "tracing")
 public class TracingFilter extends OncePerRequestFilter {
 
     static final ThreadLocal<TracingImpl> tracingLocal = new ThreadLocal<>();
 
-    @Value("${tracing.disabled}")
-    private final boolean disabled = false;
+    private boolean disabled = false;
+
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
+    }
 
     @Override
     protected void doFilterInternal(final HttpServletRequest request, final HttpServletResponse response, final FilterChain filterChain)
