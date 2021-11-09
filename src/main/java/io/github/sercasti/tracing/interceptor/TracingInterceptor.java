@@ -1,18 +1,15 @@
 package io.github.sercasti.tracing.interceptor;
 
 import io.github.sercasti.tracing.Traceable;
+import io.github.sercasti.tracing.core.Metric;
+import io.github.sercasti.tracing.core.Tracing;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import io.github.sercasti.tracing.core.Metric;
-import io.github.sercasti.tracing.core.Tracing;
-
-import java.lang.reflect.Method;
+import org.springframework.util.StringUtils;
 
 @Aspect
 @Component
@@ -31,8 +28,8 @@ public class TracingInterceptor {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 
         Traceable traceable = signature.getMethod().getAnnotation(Traceable.class);
-        String traceName = traceable.name().isEmpty() ? signature.getName() : traceable.name();
-        String traceDescription = traceable.description().isEmpty() ? null : traceable.description();
+        String traceName = StringUtils.isEmpty(traceable.name()) ? signature.getName() : traceable.name();
+        String traceDescription = StringUtils.isEmpty(traceable.description()) ? null : traceable.description();
 
         final Metric metric = tracing.start(traceName, traceDescription);
 
