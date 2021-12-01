@@ -6,7 +6,7 @@
 
     <groupId>io.github.sercasti</groupId>
     <artifactId>spring-httpserver-timings</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -28,6 +28,14 @@
             <organizationUrl>https://github.com/sercasti</organizationUrl>
         </developer>
     </developers>
+    <contributors>
+        <contributor>
+            <name>Raja Anbazhagan</name>
+            <email>raja.anbazhagan1991@gmail.com</email>
+            <organization>Personal</organization>
+            <organizationUrl>https://github.com/raja-anbazhagan</organizationUrl>
+        </contributor>
+    </contributors>
 
     <scm>
         <connection>scm:git:git://github.com/sercasti/spring-httpserver-timings.git</connection>

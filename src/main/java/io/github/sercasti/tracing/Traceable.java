@@ -16,4 +16,12 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Traceable {
+    /**
+     * An optional name to identify a method in the Server-Timing response header.
+     * <p>
+     * Helpful to avoid showing internal method names to public or to distinguish between methods with similar names.
+     */
+    String name() default "";
+
+    String description() default "";
 }
