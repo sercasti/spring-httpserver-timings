@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/sercasti/spring-httpserver-timings.svg?branch=master)](https://travis-ci.org/sercasti/spring-httpserver-timings)
+[![Build Status](https://travis-ci.com/sercasti/spring-httpserver-timings.svg?branch=master)](https://travis-ci.org/sercasti/spring-httpserver-timings)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/sercasti/spring-httpserver-timings/graphs/commit-activity)
-
 
 
 # HTTP Server Timings library for Spring Boot projects
@@ -18,7 +17,7 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
         <dependency>
             <groupId>io.github.sercasti</groupId>
             <artifactId>spring-httpserver-timings</artifactId>
-            <version>0.0.4</version>
+            <version>0.0.6</version>
         </dependency>
 ```
   
