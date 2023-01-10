@@ -10,6 +10,9 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
 # Features
   - Generate response header with traces that will be rendered by the client browser to analyze response times
   - Use as annotation to trace a method, or inject the Tracing interface to trace a block of code
+  
+# Java 17 / Spring 3 suppport:
+  - To keep original dependencies intact, I created a separate project at https://github.com/sercastiorg/spring-httpserver-timings-java17, credits to @twobiers
 
 # Instructions
   - add the dependency from maven central:
