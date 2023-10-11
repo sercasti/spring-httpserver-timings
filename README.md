@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.com/sercasti/spring-httpserver-timings.svg?branch=master)](https://travis-ci.org/sercasti/spring-httpserver-timings)
+[![Build Status](https://travis-ci.com/sercasti/spring-httpserver-timings-java17.svg?branch=master)](https://travis-ci.org/sercasti/spring-httpserver-timings-java17)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/sercasti/spring-httpserver-timings/graphs/commit-activity)
-
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/sercasti/spring-httpserver-timings-java17/graphs/commit-activity)
 
 # HTTP Server Timings library for Spring Boot projects
 
