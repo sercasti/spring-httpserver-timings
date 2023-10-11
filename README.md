@@ -12,7 +12,7 @@ This library is based on the HTTP Server Timings spec, which you can find here: 
   - Use as annotation to trace a method, or inject the Tracing interface to trace a block of code
   
 # Java 17 / Spring 3 suppport:
-  - To keep original dependencies intact, I created a separate project at https://github.com/sercastiorg/spring-httpserver-timings-java17, credits to @twobiers
+  - To keep original dependencies intact, I created a separate project at https://github.com/sercasti/spring-httpserver-timings-java17, credits to @twobiers
 
 # Instructions
   - add the dependency from maven central:
